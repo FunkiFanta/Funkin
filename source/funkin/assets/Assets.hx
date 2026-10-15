@@ -543,7 +543,7 @@ class Assets implements ConsoleClass
     // Fetch the asset synchronously.
     // NOTE: This may cause stutters.
     var sound:Sound = OpenFLAssets.getSound(assetPath.toString());
-    FunkinAssetCache.instance.setSound(assetPath.toString(), sound);
+    // FunkinAssetCache.instance.setSound(assetPath.toString(), sound);
     return sound;
     #end
   }

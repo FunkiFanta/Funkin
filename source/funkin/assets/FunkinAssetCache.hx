@@ -573,10 +573,10 @@ class FunkinAssetCache implements OpenFLIAssetCache
    */
   public function setSound(id:String, sound:Sound):Void
   {
-    #if FEATURE_DEBUG_TRACY
-    cpp.vm.tracy.TracyProfiler.zoneScoped('FunkinAssetCache.setSound($id)');
-    #end
-    stagedSound.cache(id, sound);
+    // #if FEATURE_DEBUG_TRACY
+    // cpp.vm.tracy.TracyProfiler.zoneScoped('FunkinAssetCache.setSound($id)');
+    // #end
+    // stagedSound.cache(id, sound);
   }
 
   /**
@@ -684,7 +684,7 @@ class FunkinAssetCache implements OpenFLIAssetCache
     {
       return OpenFLAssets.loadSound(assetPath.toString()).then((sound:Sound) ->
       {
-        setSound(assetPath.toString(), sound);
+        // setSound(assetPath.toString(), sound);
         #if VERBOSE_ASSET_CACHE
         trace(' ASSETS '.bold().bg_lime() + ' Cached Sound: ${assetPath.toString()}');
         #end
@@ -1096,7 +1096,7 @@ class FunkinAssetCache implements OpenFLIAssetCache
         #if VERBOSE_ASSET_CACHE
         trace(' ASSETS '.bold().bg_lime() + ' Cached Sound: ${assetPath.toString()}');
         #end
-        stagedSound.cachePermanent(assetPath.toString(), sound);
+        // stagedSound.cachePermanent(assetPath.toString(), sound);
       }
 
       promise.complete(sound != null);
@@ -1290,8 +1290,8 @@ class FunkinAssetCache implements OpenFLIAssetCache
    */
   public function permaCacheSound(key:String, sound:Sound):Void
   {
-    setSound(key, sound);
-    stagedSound.cachePermanent(key, sound);
+    // setSound(key, sound);
+    // stagedSound.cachePermanent(key, sound);
   }
 
   /**
